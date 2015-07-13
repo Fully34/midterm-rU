@@ -1,0 +1,75 @@
+
+/*===========================================================================*/
+                        /* ~~~ Utility ~~~ */ 
+/*===========================================================================*/
+
+body {
+    background-color: #eee;
+    height: 5000px;
+}
+
+.big-wrapper {
+
+}
+
+.line-break {
+    border: 1px solid #eee;
+}
+
+.border-rad {
+    border-radius: 5px;
+}
+
+/*===========================================================================*/
+                        /* ~~~ Bootstrap Override ~~~ */ 
+/*===========================================================================*/
+
+    /*==============================  navbar  =============================*/
+            
+    .navbar {
+        background-color: transparent;
+        border: none;
+    }
+
+    .navbar-default .navbar-nav>li>a  {
+        color: white;
+        text-decoration: none;
+    }
+
+    .navbar-toggle {
+        background-color: white;
+    }
+
+/*===========================================================================*/
+                        /* ~~~ HOMEPAGE ~~~ */ 
+/*===========================================================================*/
+
+    /*==============================  hero  =============================*/
+            
+    .hero-unit {
+        background-color: #eee;
+        background-image:url('http://franklincode.coursekit.com.s3.amazonaws.com/30e1ceef65aa4ba1a1bb66056eeb09b6/sass/img/onboarding-bg.jpg');
+        background-size:cover;
+        height:500px;
+        opacity: .5;
+    }
+
+    .hero-title {
+      position: relative;
+      top: -300px;
+      left: 40px;
+      color:#fff;
+    }
+
+
+/*===========================================================================*/
+                        /* ~~~ MEDIA QUERIES ~~~ */ 
+/*===========================================================================*/
+
+/*@media screen (max-width: 768px) {
+
+    .mobile-nav {
+
+        display: none;
+    }
+}*/
