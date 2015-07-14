@@ -34,12 +34,26 @@
         position: relative;
     }
 
+    .abs-horiz-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .txt-center {
+        text-align: center;
+    }
+
 /*===========================================================================*/
                         /* ~~~ Bootstrap Override ~~~ */ 
 /*===========================================================================*/
 
     /*==============================  navbar  =============================*/
-            
+    
+    .navbar-fixed-top {
+        top: 150px;
+        position: absolute;
+    }
     .navbar {
         background-color: transparent;
         border: none;
@@ -57,7 +71,8 @@
     }
 
     .navbar-toggle {
-        background-color: #FDFDFB;
+        background-color: #100B08;
+        border: 2px solid #100B08;
     }
 
     .nav > li {
@@ -69,7 +84,8 @@
     .navbar-default .navbar-collapse {
         background-color: #9A7450;
         box-shadow: none;
-        border: 1px solid white;
+        border: 1px solid #100B08;
+        font-family: "Rye", sans-serif;
     }
 
     .navbar-nav{
@@ -84,6 +100,31 @@
                         /* ~~~ HOMEPAGE ~~~ */ 
 /*===========================================================================*/
 
+    /*==============================  logo  =============================*/
+
+    .logo-container {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo {
+        height: 150px;
+        width: 150px;
+    }
+    
+    .name-title {
+        bottom: -20px;
+        font-family: "Rye", sans-serif;
+        font-size: 2em; 
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }        
+    /*==============================  custom navbar  =============================*/
+
+
+        
     /*==============================  hero  =============================*/
             
     .hero-unit {
@@ -96,28 +137,44 @@
     }
 
     .hero-title {
-      position: absolute;
-      bottom: 10px;
-      left: 5px;
-      color: #100B08;
-      font-size: 4em;
-      text-align: center;
+        bottom: 10px;
+        color: #100B08;
+        font-family: "Rye", sans-serif;
+        font-size: 3.5em;
+        text-align: center;
     }
 
 
 /*===========================================================================*/
                         /* ~~~ MEDIA QUERIES ~~~ */ 
 /*===========================================================================*/
+    
+
+    /*==============================  logo  =============================*/
+
+    @media (min-width: 768px) {
+
+        .logo-container {
+            display: inline-block;
+        }
+    }
+            
 
     /*==============================  navbar  =============================*/
             
     @media (min-width: 768px) {
 
         #fully-nav {
-            /*background-color: lightgrey;*/
-            /*border: none;*/
             background-color: transparent;
             border:none;
+        }
+
+    }
+
+    @media (max-width: 768px) {
+
+        .navbar-fixed-top {
+            top: 90px;
         }
     }
 
@@ -136,7 +193,7 @@
         }
     }
 
-    /*==============================  hero title  =============================*/
+    /*==============================  hero   =============================*/
 
     @media (max-width: 578px) {
 
@@ -147,5 +204,11 @@
             left: 0;
             right: 0;
         }
+    }
 
+    @media (max-width: 578px) {
+
+        .hero-unit {
+            height: 500px;
+        }
     }
