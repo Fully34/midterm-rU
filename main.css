@@ -5,8 +5,8 @@
 
     body {
         background-color: #F8EBDF;
-        height: 5000px;
-        font-family: "PT Sans Narrow", sans-serif;
+        /*height: 5000px;*/
+        font-family: "Rye", sans-serif;
     }
 
     .big-wrapper {
@@ -40,10 +40,23 @@
         transform: translateX(-50%);
     }
 
+    .abs-vert-center {
+        position: absolute;
+        top:50%;
+        transform: translateY(-50%);
+    }
+
     .txt-center {
         text-align: center;
     }
 
+    .absolute {
+        position: absolute;
+    }
+    
+    .inline-block {
+        display: inline-block;
+    }
 /*===========================================================================*/
                         /* ~~~ Bootstrap Override ~~~ */ 
 /*===========================================================================*/
@@ -51,7 +64,7 @@
     /*==============================  navbar  =============================*/
     
     .navbar-fixed-top {
-        top: 150px;
+        top: 0px;
         position: absolute;
     }
     .navbar {
@@ -66,7 +79,7 @@
     }
 
     .navbar-default .navbar-nav>li>a:hover  {
-        color: #100B08;
+        color: #3A1D0D;
         text-decoration: underline;
     }
 
@@ -82,7 +95,7 @@
     }
 
     .navbar-default .navbar-collapse {
-        background-color: #9A7450;
+        background-color: transparent;
         box-shadow: none;
         border: 1px solid #100B08;
         font-family: "Rye", sans-serif;
@@ -106,6 +119,7 @@
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        z-index: 110;
     }
 
     .logo {
@@ -113,6 +127,10 @@
         width: 150px;
     }
     
+    .logo-link {
+        display: inline-block;
+    } 
+
     .name-title {
         bottom: -20px;
         font-family: "Rye", sans-serif;
@@ -123,8 +141,74 @@
     }        
     /*==============================  custom navbar  =============================*/
 
+    .arm {
+        height: 1px;
+        border: 1px solid black;
+        width: 40%;
+    }
+    
+    .lft-arm {
+        position: absolute;
+        left: 0;
 
-        
+    }
+
+    .rght-arm {
+        position: absolute; 
+        right:0;
+    }
+
+    .nav-container {
+        position: absolute;
+        top: 90px;
+        left: 50%;
+        width: 30%;
+        z-index: 120;
+    }
+
+    .rght-nav {
+        transform: translateX(40%);
+    }
+
+    .lft-nav {
+        transform: translateX(-140%);
+    }
+
+    .nav-item {
+        color: #100B08;
+        display: inline-block;
+        font-size: 1.6em;
+        font-family: "Rye", sans-serif;
+        padding: 0 10px;
+    }
+
+    .nav-item-rght {
+        right: 0;
+    }
+
+    .nav-item-lft {
+        left: 0;
+    }
+    .nav-item-link {
+        text-decoration: none;
+    }
+
+    .nav-item-link:hover {
+        color: #3A1D0D;
+        text-decoration: underline;
+    }
+
+    #hidden-nav {
+        display: inline-block;
+    }
+
+    .right-align-nav {
+        position: absolute;
+        right: 10px;
+        left: 10px;
+        z-index: 100;
+        top: 60px;
+    }
     /*==============================  hero  =============================*/
             
     .hero-unit {
@@ -143,8 +227,57 @@
         font-size: 3.5em;
         text-align: center;
     }
+    
+    /*==============================  sub images  =============================*/
+
+    .img-container {
+        /*background: url(http://www.placehold.it/500);*/
+        display: inline-block;
+        height: 400px;
+    }
+
+    .sub-img {
+
+    }
+
+    .first-sub {
+        background: url(https://img1.etsystatic.com/038/0/7882618/il_fullxfull.623173907_t2rh.jpg);
+        background-size: cover;
+    }
+
+    .second-sub {
+        background: url(https://img0.etsystatic.com/007/0/6664208/il_570xN.384526352_4k5u.jpg);
+        background-size: cover;
+    }
+
+    .third-sub {
+        background: url(http://ny-image0.etsy.com/il_fullxfull.209658680.jpg);
+        background-size: cover;
+    }
 
 
+    
+    /*==============================  footer  =============================*/
+
+    .footer {
+        color: #3A1D0D;
+        background-color: #CCDDE4;
+        /*border: 1px solid black;*/
+        position: relative; 
+    }
+    
+    .footer-title {
+        display: inline-block;
+        font-size: 1.5em;
+        padding-left: 20px;
+    }     
+
+    .copyright {
+        display: inline-block;
+        font-size: 1.2em;
+        right: 20px;
+    }
+    
 /*===========================================================================*/
                         /* ~~~ MEDIA QUERIES ~~~ */ 
 /*===========================================================================*/
@@ -152,16 +285,26 @@
 
     /*==============================  logo  =============================*/
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
 
         .logo-container {
-            display: inline-block;
+            left: 100px;
+        }
+
+        .arm {
+            display: none;
         }
     }
             
 
     /*==============================  navbar  =============================*/
-            
+    /*CUSTOM NAV ELEMENTS GO BYE BY WHEN WE GO LOWER THAN 768PX*/
+
+    @media (max-width: 768px) {
+        .nav-container {
+            display: none;
+        }
+    }
     @media (min-width: 768px) {
 
         #fully-nav {
@@ -169,12 +312,15 @@
             border:none;
         }
 
+        #hidden-nav {
+            display: none;
+        }
     }
 
     @media (max-width: 768px) {
 
         .navbar-fixed-top {
-            top: 90px;
+            top: 120px;
         }
     }
 
@@ -190,6 +336,14 @@
     @media (max-width: 768px) {
         ul.nav.navbar-nav {
             border: none;
+        }
+    }
+
+    /*stop widening when we get to 1420px window width*/
+    @media (min-width: 1420px) {
+
+        .nav-container {
+            width: 425px;
         }
     }
 
@@ -210,5 +364,83 @@
 
         .hero-unit {
             height: 500px;
+        }
+    }
+    
+    /*==============================  sub-images  =============================*/
+
+    /*first and second sub image responsive controls*/
+    @media (min-width: 992px) {
+
+        .first-sub, .second-sub{
+            height: 450px;
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .first-sub, .second-sub {
+            height: 500px;
+        }
+    }
+    
+    @media (min-width: 1300px) {
+        .first-sub, .second-sub {
+            height: 600px;
+        }
+    }
+
+    @media (min-width: 1500px) {
+        .first-sub, .second-sub {
+            height: 700px;
+        }
+    }
+
+    /*second sub image responsive controls*/
+
+    @media (max-width: 500px) {
+        .second-sub{
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 350px) {
+        .second-sub{
+            height: 200px;
+        }
+    }
+
+    /*@media (max-width: 300px) {
+        .second-sub{
+            height: 150px;
+        }
+    }*/
+    /*third sub image responsive controls*/
+    @media (max-width: 1200px) {
+        .third-sub{
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 880px) {
+        .third-sub{
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 550px) {
+        .third-sub{
+            height: 100px;
+        }
+        .first-sub {
+            height: 250px;
+        }
+    }
+
+    /*change background of .second-sub when we go smaller than 768px*/
+    @media (max-width: 768px) {
+        .second-sub {
+            background: url(http://ecx.images-amazon.com/images/I/916QVDxj3RL._SX425_.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
         }
     }

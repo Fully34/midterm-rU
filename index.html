@@ -12,73 +12,102 @@
   <body>
     <div class="big-wrapper">
 
-            <div class="container txt-center">
-                
-                <div class="navbar navbar-default navbar-fixed-top">
+        <!-- NAVBAR -->
+        <div class="nav-container lft-nav txt-center">
+            <div class="relative"> 
+                <a href="about.html" class="absolute nav-item nav-item-link nav-item-lft">About</a>
+                <a href="queue.html" class="absolute nav-item nav-item-link nav-item-rght">Queue</a>
+            </div>
+        </div>
+
+        <div class="nav-container rght-nav txt-center">
+            <div class="relative"> 
+                <a href="portfolio.html" class="absolute nav-item nav-item-link nav-item-lft">Portfolio</a>
+                <a href="shop.html" class="absolute nav-item nav-item-link nav-item-rght">Shop</a>
+            </div>
+        </div>
+        
+        <div class="container logo-container txt-center clearfix">
+            
+
+            <div class="arm lft-arm abs-vert-center"></div>
+            <a href="home" class="logo-link">
+                <img class="logo" src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-silver-icons-sports-hobbies/044642-glossy-silver-icon-sports-hobbies-horseshoe1.png" alt="">
+            </a>
+            <div class="arm rght-arm abs-vert-center"></div>
+
+        </div> <!-- END MAIN NAVBAR -->
+        
+
+        <div class="container">
+           
+            <nav class="navbar navbar-default right-align-nav" id="hidden-nav">
+
+                <div class="container-fluid">
+
+                    <div class="navbar-header">
+
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fully-nav" aria-expanded="false">
+
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+
+                      </button>
+                    </div>
+
+                    <!-- The nav elements will collapse into a hamburger menu when the screen-size is < 768px -->
+                    <div class="collapse navbar-collapse horiz-center border-rad" id="fully-nav">
+
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item"><a href="#">About</a></li>
+                            <li class="nav-item"><a href="#">Portfolio</a></li>
+                            <li class="nav-item"><a href="#">Shop</a></li>
+                            <li class="nav-item"><a href="#">Queue</a></li>
+                        </ul>
+
+                    </div><!--  navbar-collapse END --> 
+                </div>  <!-- container-fluid END --> 
+            </nav> <!-- navbar END -->
+
+       </div> <!-- navbar container END -->
+
+        <div class="relative">
+
+            <div class="hero-unit img-responsive"></div>
+
+            <h1 class='hero-title abs-horiz-center'>Custom Horseshoe Art and Wine Racks </h1>
+
+        </div> <!-- hero unit END -->
+        
+        <div class="container-fluid">
+            <div class="row txt-center">
+            
+                <div class="col-md-8 col-lg-8 col-sm-8 col-xs-12 img-container first-sub">
                     
-                    <div class="collapse navbar-collapse horiz-center " id="left-nav">
-
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item"><a href="#">Home</a></li>
-                                <li class="nav-item"><a href="#">About</a></li>
-                                <li class="nav-item"><a href="#">Portfolio</a></li>
-                                <li class="nav-item"><a href="#">Shop</a></li>
-                                <li class="nav-item"><a href="#">Queue</a></li>
-                            </ul>
-
-                        </div>
+                    <!-- <img src="https://img1.etsystatic.com/038/0/7882618/il_fullxfull.623173907_t2rh.jpg" alt="" class="sub-img img-responsive"> -->
 
                 </div>
-                <img class="logo" src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-silver-icons-sports-hobbies/044642-glossy-silver-icon-sports-hobbies-horseshoe1.png" alt="">
-                <!-- <h1 class="name-title">SHOP NAME HERE</h1> -->
 
-            </div>
+                <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12 img-container second-sub">
 
-            <!-- <div class="container">
-               
-                <nav class="navbar navbar-default navbar-fixed-top ">
+                </div>
 
-                    <div class="container-fluid">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12 img-container third-sub">
 
-                        <div class="navbar-header">
+                </div>
+            </div> <!-- subimg row END -->
+        </div> <!-- sub img container END -->
+    </div>
 
-                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#fully-nav" aria-expanded="false">
-
-                            <span class="sr-only">Toggle navigation</span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-
-                          </button>
-                        </div>
-
-                        The nav elements will collapse into a hamburger menu when the screen-size is < 768px
-                        <div class="collapse navbar-collapse horiz-center " id="left-nav">
-
-                            <ul class="nav navbar-nav">
-                                <li class="nav-item"><a href="#">Home</a></li>
-                                <li class="nav-item"><a href="#">About</a></li>
-                                <li class="nav-item"><a href="#">Portfolio</a></li>
-                                <li class="nav-item"><a href="#">Shop</a></li>
-                                <li class="nav-item"><a href="#">Queue</a></li>
-                            </ul>
-
-                        </div> navbar-collapse END 
-                    </div>  container-fluid END 
-                </nav>
-
-           </div> -->
-
-            <div class="relative">
-
-                <div class="hero-unit img-responsive"></div>
-
-                <h1 class='hero-title abs-horiz-center'>Custom Horseshoe Art and Wine Racks </h1>
-
-            </div>
-        <hr class="line-break">
+    <div class="footer">
+        
+        <h5 class="footer-title"> Name McNamerson</h5>
+        <p class="copyright abs-vert-center">Copyright (c) 2015</p>
 
     </div>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
