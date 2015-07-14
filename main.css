@@ -239,8 +239,13 @@
     .sub-img {
 
     }
+    
+    .opaque {
+        height: 100%;
+    }
 
     .first-sub {
+        background-color: black;
         background: url(https://img1.etsystatic.com/038/0/7882618/il_fullxfull.623173907_t2rh.jpg);
         background-size: cover;
     }
@@ -254,8 +259,6 @@
         background: url(http://ny-image0.etsy.com/il_fullxfull.209658680.jpg);
         background-size: cover;
     }
-
-
     
     /*==============================  footer  =============================*/
 
