@@ -61,24 +61,25 @@
 
     var completeArr = ['#BOOM', 'No Sweat!', 'I Will Take All Challengers!'];
 
-    var incompleteCustomerArr = [];
+    var incompleteCustomerData = {customers: [] };
 
-    var completeCustomerArr = [];
+    var completeCustomerData = {customers: []};
 
     // global var for order numbers
     var orderCount = 1;
 
     //========================= customer object constructor=========================//
 
-    var Customer = function(order, name, address) {
+    var Customer = function(order, name, address, type) {
+
         this.order = order;    
         this.name = name;
-        this.address = address;
+        this.address = address || null;
         this.paid = null;
         this.inProgress = null;
         this.complete = null;
         this.shipped = null; 
-        this.type = null;
+        this.type = type || null;
     }
 
     Customer.prototype.isPaid = function() {
@@ -101,60 +102,9 @@
         this.shipped = true;
     }
 
-
-    var cust1 = new Customer(1, "myName", "123 awesome street, awesomeville, CO, 83874" );
-    console.log("cust1 " + cust1)
-
-
     //============================== submit button ==============================//
 
-    // create new customer on click and push that customer to current customer array as well as to the table
-    $('.submit-customer-btn').on('click', function(event) {
-
-        event.preventDefault();
-
-        var name = $(this).siblings('#name-input').val().toLowerCase();
-        var address = $(this).siblings('#address-input').val().toLowerCase();
-        var type = $(this).siblings('#type-input').val().toLowerCase();
-
-        var valName = validate(name);
-        var valAddress = validate(address);
-        var valType = validate(type)
-
-        // check each input for value
-        if (!valName) {
-
-            $(this).siblings('#name-input').addClass('invalid-form');
-        }
-
-        if (!valAddress) {
-
-            $(this).siblings('#address-input').addClass('invalid-form');
-        }
-
-        if (!valType) {
-
-            $(this).siblings('#type-input').addClass('invalid-form');
-        }
-
-        // if all inputs have a string in them, proceed with creating the customer
-        if (valName && valAddress && valType) {
-
-            var newCust = new Customer(); 
-
-            makeNewCust(newCust, name, address, type, orderCount);
-
-            // increment the order count for each new customer created
-            orderCount ++;
-
-            incompleteCustomerArr.push(newCust);
-
-            $(this).siblings('#name-input').val('');
-            $(this).siblings('#address-input').val('');
-            $(this).siblings('#type-input').val('');
-        }
-    });
-            
+    //only checking if there is actually something there in each input field
     var validate = function(string) {
 
         if ( (string.length <= 0) ) {
@@ -165,13 +115,88 @@
         return true;
     }
 
-    var makeNewCust = function(obj, name, address, type, order) {
-        obj.name = name;
-        obj.address = address;
-        obj.type = type;
-        obj.order = orderCount;
-    };
+    // create new customer on click and push that customer to current customer array as well as to the table
+    $('.submit-customer-btn').on('click', function(event) {
 
+        event.preventDefault();
+
+        // variables set to value of form elements
+        var name = $(this).siblings('#name-input').val().toLowerCase();
+        var address = $(this).siblings('#address-input').val().toLowerCase();
+        var type = $(this).siblings('#type-input').val().toLowerCase();
+
+        // validate the text we extract from the form elements
+        var valName = validate(name);
+        var valAddress = validate(address);
+        var valType = validate(type)
+
+        // FORM VALIDATION
+        if (!valName) {
+
+            $(this).siblings('#name-input').addClass('invalid-form');
+
+            setTimeout(function(){
+
+                $('#name-input').removeClass('invalid-form');
+            }, 1000);
+        }
+
+        if (!valAddress) {
+
+            $(this).siblings('#address-input').addClass('invalid-form');
+
+            setTimeout(function(){
+
+                $('#address-input').removeClass('invalid-form');
+            }, 1000);
+        }
+
+        if ( (!valType) ) {
+
+            $(this).siblings('#type-input').addClass('invalid-form');
+
+            setTimeout(function(){
+
+                $('#type-input').removeClass('invalid-form');
+            }, 1000);
+        }
+
+        // if all inputs have a string in them, proceed with creating the customer
+        if (valName && valAddress && valType) {
+
+            var ensure = confirm('Make sure you entered your infomation right! \n\n Name: ' + name + '\n Address: ' + address + '\n Type: ' + type);
+
+            if ( ensure ) {
+
+                $('.queue-table-body').html('');
+
+                var newCust = new Customer(orderCount, name, address, type); 
+
+                // increment the order count for each new customer created
+                orderCount ++;
+
+                var array = incompleteCustomerData.customers;
+
+                array.push(newCust);
+
+                $(this).siblings('#name-input').val('');
+                $(this).siblings('#address-input').val('');
+                $(this).siblings('#type-input').val('');
+
+                var templateScript = $('#table-data-script').html();
+
+                var tableDataTemplate = Handlebars.compile(templateScript);
+
+                $('.queue-table-body').append(tableDataTemplate(incompleteCustomerData))
+
+            } else {
+
+                alert('Fix that stuff then, fool!')
+            }
+        }
+    });
+    
+    //============================== FIRST ATTEMPT AT HANDLEBARS ==============================//
 
 
 
