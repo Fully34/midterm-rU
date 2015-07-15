@@ -71,10 +71,111 @@
                 </div>  <!-- container-fluid END --> 
             </nav> <!-- navbar END -->
 
-       </div> <!-- navbar container END -->
+        </div> <!-- navbar container END -->
+    
+        <div class="content-container">
+            <div class="table-wrapper row horiz-center">
+                <div class="table-container col-sm-10 col-md-10 col-lg-10 horiz-center">
 
+                    <table class="queue-table table table-striped">
+
+                        <thead class="txt-center table-heading">
+                            <th class="txt-center">Order</th>
+                            <th class="txt-center">Name</th>
+                            <th class="txt-center">In-Progress</th>
+                            <th class="txt-center">Complete</th>
+                            <th class="txt-center">Shipped</th>
+                        </thead> 
+
+                        <tbody class="txt-center table-body">
+                            <tr class="txt-center table-rows">
+                                <td class="txt-center">
+
+                                    <input type="checkbox" class="tabl-check order-check hidden">
+                                    <p class="order-col">1</p>
+
+                                </td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check name-check hidden">
+                                    <p class="name-col">Name G</p>
+
+                                </td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check progress-check hidden">
+                                    <p class="progress-col">Engage!</p>
+
+                                </td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check complete-check">
+                                    <p class="complete-col hidden"></p>
+                                </td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check shipped-check">
+                                    <p class="shipped-col hidden"></p>
+                        
+                                </td>
+                            </tr>
+
+                            <tr class="txt-center table-rows">
+                                <td class="txt-center">2</td>
+                                <td class="txt-center">Name Y</td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check">
+
+                                </td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check">
+
+                                </td>
+                                <td class="txt-center">
+                                    
+                                    <input type="checkbox" class="tabl-check">
+
+                                </td>
+                            </tr>                      
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <hr class="page-break"> 
+
+            <div class="admin-form-container">
+                
+                <h1 class="form-header horiz-center">This is where the magic happens!</h1>
+                <form action="set" class="new-customer-form">
+                    
+                    <label class="form-label" for="name-input">Name:</label>
+                    <br>
+                    <input class="input-field horiz-center" id="name-input" type="text" placeholder="Name">
+                    
+                    <br>
+
+                    <label class="form-label" for="address-input">Address:</label>
+                    <br>
+                    <input class="input-field horiz-center" id="address-input" type="text" placeholder="Address">
+                    
+                    <br>
+
+                    <label for="type-input" class="form-labe">Type:</label>
+                    <br>
+                    <input type="text" class="input-field horiz-center" id="type-input" placeholder="What type?">
+
+                    <button class="submit-customer-btn horiz-center btn btn-success">SUBMIT CUSTOMER</button>
+                </form>
+
+            </div>
+        </div> <!-- content container END -->
+    </div> <!-- big wrapper END -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 
