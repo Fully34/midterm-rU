@@ -14,7 +14,7 @@
     }
 
     .clearfix {
-        overflow: auto;
+        overflow: hidden;
         z-index: 10;
     }
 
@@ -234,6 +234,8 @@
         /*background: url(http://www.placehold.it/500);*/
         display: inline-block;
         height: 400px;
+        min-width: 250px;
+        position: relative;
     }
 
     .sub-img {
@@ -260,6 +262,22 @@
         background-size: cover;
     }
     
+    /*==============================  hover-container contents  =============================*/
+
+    .hover-container {
+        background-color: rgba(204,221,228, 0.7);
+        border: 2px dashed #100B08;
+        position: relative;
+        margin-top: -50px;
+        padding: 10px;
+    }
+    
+    .hover-description {
+        padding: 5px;
+    }
+    .shop-btn {
+        /*padding: 5px;*/
+    }
     /*==============================  footer  =============================*/
 
     .footer {
@@ -267,17 +285,16 @@
         background-color: #CCDDE4;
         /*border: 1px solid black;*/
         position: relative; 
+        font-size: .9em;
     }
     
     .footer-title {
         display: inline-block;
-        font-size: 1.5em;
         padding-left: 20px;
     }     
 
     .copyright {
         display: inline-block;
-        font-size: 1.2em;
         right: 20px;
     }
     
@@ -445,5 +462,11 @@
             background: url(http://ecx.images-amazon.com/images/I/916QVDxj3RL._SX425_.jpg);
             background-size: cover;
             background-repeat: no-repeat;
+        }
+    }
+
+    @media (max-width: 300px) {
+        .footer-title, .copyright {
+            font-size: 0.5em;
         }
     }
