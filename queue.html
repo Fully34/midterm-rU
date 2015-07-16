@@ -10,31 +10,32 @@
 
   </head>
   <body>
-    <div class="big-wrapper">
+    <img src="http://www.azedu.net/wp-content/uploads/2015/05/rustic-wood-floor-background-rustic-wood-floors-rustic-wood-floors.jpg" class="background-img" alt="">
+    <div class="big-wrapper ">
 
         <!-- NAVBAR -->
         <div class="nav-container lft-nav txt-center">
             <div class="relative"> 
-                <a href="about.html" class="absolute nav-item nav-item-link nav-item-lft">About</a>
-                <a href="queue.html" class="absolute nav-item nav-item-link nav-item-rght">Queue</a>
+                <a href="about.html" class="absolute nav-item awesome-border-fill  nav-item-link nav-item-lft">About</a>
+                <a href="queue.html" class="absolute nav-item awesome-border-fill  nav-item-link nav-item-rght">Queue</a>
             </div>
         </div>
 
         <div class="nav-container rght-nav txt-center">
             <div class="relative"> 
-                <a href="portfolio.html" class="absolute nav-item nav-item-link nav-item-lft">Portfolio</a>
-                <a href="shop.html" class="absolute nav-item nav-item-link nav-item-rght">Shop</a>
+                <a href="portfolio.html" class="absolute nav-item awesome-border-fill  nav-item-link nav-item-lft">Portfolio</a>
+                <a href="shop.html" class="absolute nav-item awesome-border-fill  nav-item-link nav-item-rght">Shop</a>
             </div>
         </div>
         
         <div class="container logo-container txt-center clearfix">
             
 
-            <div class="arm lft-arm abs-vert-center"></div>
+            <div class=" lft-arm abs-vert-center woodback-arm"></div>
             <a href="index.html" class="logo-link">
                 <img class="logo" src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/glossy-silver-icons-sports-hobbies/044642-glossy-silver-icon-sports-hobbies-horseshoe1.png" alt="">
             </a>
-            <div class="arm rght-arm abs-vert-center"></div>
+            <div class=" rght-arm abs-vert-center woodback-arm"></div>
 
         </div> <!-- END MAIN NAVBAR -->
         
@@ -61,24 +62,25 @@
                     <div class="collapse navbar-collapse txt-center border-rad" id="fully-nav">
 
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"><a href="about.html">About</a></li>
-                            <li class="nav-item"><a href="queue.html">Queue</a></li>
-                            <li class="nav-item"><a href="portfolio.html">Portfolio</a></li>
-                            <li class="nav-item"><a href="shop.html">Shop</a></li>
+                            <li class="nav-item awesome-border-fill "><a href="about.html">About</a></li>
+                            <li class="nav-item awesome-border-fill "><a href="queue.html">Queue</a></li>
+                            <li class="nav-item awesome-border-fill "><a href="portfolio.html">Portfolio</a></li>
+                            <li class="nav-item awesome-border-fill "><a href="shop.html">Shop</a></li>
                         </ul>
 
-                    </div><!--  navbar-collapse END --> 
+                    </div>  <!--  navbar-collapse END --> 
                 </div>  <!-- container-fluid END --> 
             </nav> <!-- navbar END -->
 
         </div> <!-- navbar container END -->
-    
+        
+        <div class="spacer"></div>
         <div class="content-container txt-center">
-            <h4 class="table-title"> Recently Shipped!</h4>
+            <h4 class="table-title awesome-border-fill"> Recently Shipped!</h4>
             <div class="table-wrapper row horiz-center">
                 <div class="table-container horiz-center col-xs-6 col-sm-6 col-md-6 col-lg-6">
                     
-                    <table class="shipped-table table table-striped">
+                    <table id="recent-table" class="border-rad shipped-table table table-striped">
 
                         <thead class="txt-center table-heading">
                             <th class="txt-center">Order</th>
@@ -94,11 +96,11 @@
                 </div> <!-- table container END --> 
             </div><!-- table wrapper END --> 
 
-            <h4 class="table-title">On The Stack!</h4>
+            <h4 class="table-title awesome-border-fill">On The Stack!</h4>
             <div class="table-wrapper row horiz-center">
                 <div class="table-container col-sm-10 col-md-10 col-lg-10 horiz-center">
 
-                    <table class="queue-table table table-striped">
+                    <table id="queue-table" class="border-rad queue-table table table-striped">
 
                         <thead class="txt-center table-heading">
                             <th class="txt-center">Order</th>
@@ -121,29 +123,35 @@
 
             <div class="admin-form-container txt-center">
                 
-                <h1 class="form-header">This is where the magic happens!</h1>
+                <h1 class="form-header awesome-border-fill">This is where the magic happens!</h1>
                 <form action="set" class="new-customer-form">
                     
-                    <label class="form-label" for="name-input">Name:</label>
+                    <label class="form-label awesome-border-fill" for="name-input">Name:</label>
                     <br>
                     <input class="border-rad input-field horiz-center" id="name-input" type="text" placeholder="Name" value="DUMMY">
                     
                     <br>
 
-                    <label class="form-label" for="address-input">Address:</label>
+                    <label class="form-label awesome-border-fill" for="address-input">Address:</label>
                     <br>
                     <input class="border-rad input-field horiz-center" id="address-input" type="text" placeholder="Address" value="DUMMY">
                     
                     <br>
 
-                    <label for="type-input" class="form-labe">Type:</label>
+                    <label for="type-input" class="form-label awesome-border-fill">Type:</label>
                     <br>
                     <input type="text" class="border-rad input-field horiz-center" id="type-input" placeholder="What type?" value="DUMMY">
 
-                    <button class="submit-customer-btn btn btn-success">SUBMIT CUSTOMER</button>
+                    <button class="submit-customer-btn btn btn-success horiz-center">SUBMIT CUSTOMER</button>
                 </form>
 
             </div>
+            <div class="footer clearfix">
+                
+                <h5 class="footer-title align-left"> Name McNamerson</h5>
+                <p class="copyright abs-vert-center">Copyright (c) 2015</p>
+
+            </div> <!-- footer END-->
         </div> <!-- content container END -->
     </div> <!-- big wrapper END -->
                             
@@ -151,7 +159,7 @@
     <script id="table-data-script" type="tex/x-handlebars-template">
 
         {{#each customers}}
-        <tr class="txt-center table-row">
+        <tr class="txt-center table-row border-rad">
             <td class="txt-center orderData" data-order="{{order}}">
                 <p class="order-col">{{order}}</p>
             </td>
@@ -176,7 +184,7 @@
     </script>
 
     <script id="complete-table-script" type="tex/x-handlebars-template">
-        {{#each customers}}
+        {{#each customersToRender}}
         <tr class="txt-center table-row">
             <td class="txt-center orderData" data-order="{{order}}">
                 <p class="order-col">{{order}}</p>

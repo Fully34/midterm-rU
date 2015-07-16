@@ -71,7 +71,14 @@
 
     var completeTableTemplate = Handlebars.compile(templateScriptComplete);
 
-    var completeCustomerData = {customers: [], customersToRender : [] };
+    var completeCustomerData = {
+
+        customers: [],
+
+        customersToRender : [] 
+
+    };
+
 
     // global var for order numbers
     var orderCount = 1;
@@ -158,7 +165,6 @@
 
             var errorInName = $(this).siblings('#name-input');
             errorInName.addClass('invalid-form');
-            errorInName.val("NEED TEXT!!!!");
 
             setTimeout(function(){
 
@@ -170,7 +176,6 @@
 
             var errorInAddress = $(this).siblings('#address-input');
             errorInAddress.addClass('invalid-form');
-            errorInAddress.val("NEED TEXT!!!!");
 
             setTimeout(function(){
 
@@ -181,9 +186,8 @@
         if ( (!valType) ) {
 
             var errorInType = $(this).siblings('#type-input');
-
             errorInType.addClass('invalid-form');
-            errorInType.val("NEED TEXT!!!");
+
 
             setTimeout(function(){
 
@@ -226,6 +230,17 @@
     
     //======================= replacing the button on the queue ==============================//
     
+    // find and return customer object based on order number
+    var returnTheCustomer = function(orderNum) {
+
+        var arr = incompleteCustomerData.customers;
+
+        // find the customer and set to variable
+        var theCustomer = _.find(arr, function(obj) { return obj.order === orderNum; });
+
+        return theCustomer;
+    };
+
     $('.table').on('click', '.table-check', function(){
 
         // DOM traversal to link action to data inside incompleteCustomerData.customers array 
@@ -280,8 +295,12 @@
                     $('.queue-table-body').html('');
                     $('.queue-table-body').append(tableDataTemplate(incompleteCustomerData));
 
+                    // Add this customer to the customerToRender array in the completeCustomerData object
                     completeArrRender.unshift(theCustomer);
-                    completeArrRender.length = 5;
+                    if ( completeArrRender.length >= 5) {
+
+                        completeArrRender.length = 5;
+                    }
 
                     $('.shipped-table-body').html('');
                     $('.shipped-table-body').append(completeTableTemplate(completeCustomerData))
@@ -302,15 +321,7 @@
 
 
 
-    var returnTheCustomer = function(orderNum) {
 
-        var arr = incompleteCustomerData.customers;
-
-        // find the customer and set to variable
-        var theCustomer = _.find(arr, function(obj) { return obj.order === orderNum; });
-
-        return theCustomer;
-    };
 
 
 

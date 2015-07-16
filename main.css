@@ -2,6 +2,9 @@
 /*===========================================================================*/
                         /* ~~~ Utility ~~~ */ 
 /*===========================================================================*/
+    .align-left {
+        left: 10px;
+    }
 
     body {
         background-color: #F8EBDF;
@@ -11,6 +14,19 @@
 
     .big-wrapper {
 
+    }
+
+    .background-img {
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        min-width: 100%;
+        min-height: 100%;
+        z-index: -10;
+    }
+
+    .queue-font {
+        color: #CCDDE4;
     }
 
     .clearfix {
@@ -60,7 +76,11 @@
     }
 
     .page-break {
-        border: 1px solid black;
+        border: 1px solid #CCDDE4;
+    }
+
+    .spacer {
+        height: 300px;
     }
 /*===========================================================================*/
                         /* ~~~ Bootstrap Override ~~~ */ 
@@ -82,14 +102,14 @@
         color: #100B08;
         text-decoration: none;
     }
-
+    
     .navbar-default .navbar-nav>li>a:hover  {
         color: #3A1D0D;
         text-decoration: underline;
     }
 
     .navbar-toggle {
-        background-color: #100B08;
+        background-color: #CCDDE4;
         border: 2px solid #100B08;
     }
 
@@ -186,7 +206,7 @@
         font-family: "Rye", sans-serif;
         padding: 0 10px;
     }
-
+    
     .nav-item-rght {
         right: 0;
     }
@@ -288,18 +308,19 @@
     .footer {
         color: #3A1D0D;
         background-color: #CCDDE4;
-        /*border: 1px solid black;*/
         position: relative; 
         font-size: .9em;
     }
     
     .footer-title {
         display: inline-block;
+        float: left;
         padding-left: 20px;
     }     
 
     .copyright {
         display: inline-block;
+        float: right;
         right: 20px;
     }
     
@@ -308,15 +329,61 @@
                         /* ~~~ QUEUE PAGE ~~~ */ 
 /*===========================================================================*/
     
+    /*==============================  nav  =============================*/
+            
     /*==============================  Content  =============================*/
 
-    .content-container {
-        position: relative;
-        top: 200px;
+    /*.woodback-nav-item {
+        color: #CCDDE4;
+        display: inline-block;
+        font-size: 1.6em;
+        font-family: "Rye", sans-serif;
+        padding: 0 10px;
+    }*/
+
+    .woodback-arm {
+        height: 1px;
+        border: 1px solid #CCDDE4;
+        width: 40%;
+    }
+    
+    a.woodback-item-link:hover {
+        color: #B99A88;
+        text-decoration: underline;
+    }
+    
+    .navbar-default .navbar-nav>li.woodback-nav-item>a {
+        color: #CCDDE4;
+        font-size: 1em;
+        text-decoration: underline;
     }
 
-    
+    .navbar-default .navbar-nav>li.woodback-nav-item>a:hover {
+        color: #B99A88;
+        text-decoration: underline;
+    }
     /*==============================  Table  =============================*/
+
+    /*==============================  bootstrap override  =============================*/
+    .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+
+        padding: 8px;
+        line-height: 20px;
+        vertical-align: middle;
+        border-top: 1px solid #ddd;
+    }
+    
+    /*vertical middle*/
+    td > p {
+        margin: 0;
+    }
+    #queue-table, #recent-table {
+        border-bottom: none;
+    }
+
+    .table>thead>tr>th {
+        border-bottom: none;
+    }
 
     .table-wrapper {
         display: block;
@@ -332,14 +399,11 @@
 
     .table {
         text-align: center;
+        background-color: #CCDDE4;
     }
 
     td {
         font-family: "PT Sans Narrow", sans-serif;
-    }
-
-    .table > tbody > tr > td {
-        /*vertical-align: middle;*/
     }
 
     button.inProgress-true {
@@ -357,6 +421,7 @@
     .table-title {
         display: inline-block;
         border-bottom: 2px solid #100B08;
+        z-index: 100;
     }
     /*==============================  admin form  =============================*/
     
@@ -368,6 +433,7 @@
     .new-customer-form {
         width: 50%;
         margin: 0 auto;
+        text-align: left;
     }
     
     .input-field {
@@ -383,10 +449,11 @@
         outline: none;
         box-shadow: 0 0 2px 3px rgba(58,29,13, 0.5)
     }
+
     .invalid-form {
         color: red;
         background-color: rgba(233, 18, 1, 0.4);
-        box-shadow: 0px 0px 5px 5px rgba(233, 18, 1, 0.7);
+        box-shadow: 0px 0px 5px 5px rgba(233, 18, 1, 0.9);
     } 
 
     
@@ -396,13 +463,21 @@
     }
 
     .form-label {
+        color: #100B08;
 
     }
-
+    
+    .awesome-border-fill {
+        background-color: rgba(206, 221, 228, 0.5);
+        border-radius: 5px;
+        border-bottom: 2px solid #CCDDE4;
+        border-top: 2px solid #CCDDE4;
+        padding: 5px;
+    }
     .form-header {
-        border-bottom: 2px solid #100B08;
+
         display: inline-block;
-        padding-bottom: 20px;
+        padding: 20px;
         position: relative;
         text-align: center;
 
@@ -424,6 +499,10 @@
             }
 
             .arm {
+                display: none;
+            }
+
+            .woodback-arm {
                 display: none;
             }
         }
