@@ -258,7 +258,6 @@
 
                     var completeArr = completeCustomerData.customers;
                     var completeArrRender = completeCustomerData.customersToRender;
-                    completeArrRender = [];
 
                     completeArr.push(theCustomer);
                     theCustomer.isShipped();
@@ -281,11 +280,10 @@
                     $('.queue-table-body').html('');
                     $('.queue-table-body').append(tableDataTemplate(incompleteCustomerData));
 
-                    for (var i = completeArr.length; i > completeArr.length-5; i--) {
+                    completeArrRender.unshift(theCustomer);
+                    completeArrRender.length = 5;
 
-                        completeArrRender.push(completeArr[i]); 
-                    };
-
+                    $('.shipped-table-body').html('');
                     $('.shipped-table-body').append(completeTableTemplate(completeCustomerData))
                     // $('.shipped-table-body').append(completeTableTemplate(completeCustomerData))
 
