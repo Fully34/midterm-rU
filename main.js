@@ -240,16 +240,6 @@
 
             if ( yesNo ) {
 
-                // var theP = $(this).siblings('.chain-item');
-
-                // $(this).addClass('hidden');
-                // theP.removeClass('hidden');
-
-                // //pick text at random from the fun quotes array
-                // var quote = _.sample(progressArr, 1); 
-                // theP.text(quote);
-
-                // check which button we pressed and then modify the customer's data
                 if ( $(this).hasClass('progress-check') ) {
 
                     $('.queue-table-body').html('');
@@ -265,6 +255,7 @@
                 } else if ( $(this).hasClass('shipped-check') ) {
                     
                     var incompleteArr = incompleteCustomerData.customers;
+
                     var completeArr = completeCustomerData.customers;
                     var completeArrRender = completeCustomerData.customersToRender;
                     completeArrRender = [];
@@ -277,11 +268,15 @@
                         // then push it to template and the completed table
                     for (var i = 0; i < incompleteArr.length; i++) {
 
-                        if (incompleteArr[i].date === theCustomer.date) {
+                        debugger;
 
-                            incompleteArr.splice(i, 1);
-                        }  
-                    };
+                        if (incompleteArr[i].dateShipped === theCustomer.dateShipped) {
+
+                            var toBeSpliced = i;
+                        } 
+                    }
+
+                    incompleteArr.splice(toBeSpliced, 1);
 
                     $('.queue-table-body').html('');
                     $('.queue-table-body').append(tableDataTemplate(incompleteCustomerData));
