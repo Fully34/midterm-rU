@@ -73,7 +73,28 @@
 
         </div> <!-- navbar container END -->
     
-        <div class="content-container">
+        <div class="content-container txt-center">
+            <h4 class="table-title"> Recently Shipped!</h4>
+            <div class="table-wrapper row horiz-center">
+                <div class="table-container horiz-center col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    
+                    <table class="shipped-table table table-striped">
+
+                        <thead class="txt-center table-heading">
+                            <th class="txt-center">Order</th>
+                            <th class="txt-center">Name</th>
+                            <th class="txt-center">Shipped</th>
+                        </thead> 
+
+                        <tbody class="txt-center shipped-table-body">
+    
+
+                        </tbody>
+                    </table>
+                </div> <!-- table container END --> 
+            </div><!-- table wrapper END --> 
+
+            <h4 class="table-title">On The Stack!</h4>
             <div class="table-wrapper row horiz-center">
                 <div class="table-container col-sm-10 col-md-10 col-lg-10 horiz-center">
 
@@ -92,34 +113,34 @@
 
                         </tbody>
                     </table>
-                </div>
-            </div>
+                </div> <!-- table container END -->
+            </div> <!-- table wrapper END -->
 
 
             <hr class="page-break"> 
 
-            <div class="admin-form-container">
+            <div class="admin-form-container txt-center">
                 
-                <h1 class="form-header horiz-center">This is where the magic happens!</h1>
+                <h1 class="form-header">This is where the magic happens!</h1>
                 <form action="set" class="new-customer-form">
                     
                     <label class="form-label" for="name-input">Name:</label>
                     <br>
-                    <input class="border-rad input-field horiz-center" id="name-input" type="text" placeholder="Name">
+                    <input class="border-rad input-field horiz-center" id="name-input" type="text" placeholder="Name" value="DUMMY">
                     
                     <br>
 
                     <label class="form-label" for="address-input">Address:</label>
                     <br>
-                    <input class="border-rad input-field horiz-center" id="address-input" type="text" placeholder="Address">
+                    <input class="border-rad input-field horiz-center" id="address-input" type="text" placeholder="Address" value="DUMMY">
                     
                     <br>
 
                     <label for="type-input" class="form-labe">Type:</label>
                     <br>
-                    <input type="text" class="border-rad input-field horiz-center" id="type-input" placeholder="What type?">
+                    <input type="text" class="border-rad input-field horiz-center" id="type-input" placeholder="What type?" value="DUMMY">
 
-                    <button class="submit-customer-btn horiz-center btn btn-success">SUBMIT CUSTOMER</button>
+                    <button class="submit-customer-btn btn btn-success">SUBMIT CUSTOMER</button>
                 </form>
 
             </div>
@@ -130,37 +151,46 @@
     <script id="table-data-script" type="tex/x-handlebars-template">
 
         {{#each customers}}
-        <tr class="txt-center table-rows">
-            <td class="txt-center">
-
+        <tr class="txt-center table-row">
+            <td class="txt-center orderData" data-order="{{order}}">
                 <p class="order-col">{{order}}</p>
-
             </td>
-            <td class="txt-center">
-                
+            <td class="txt-center nameData">
                 <p class="name-col">{{name}}</p>
-
             </td>
-            <td class="txt-center">
-                
-                <input type="checkbox" class="tabl-check progress-check">
-                <p class="progress-col hidden"></p>
 
+            <td class="txt-center progressData">
+                <button class="btn btn-success table-check progress-check  inProgress-{{inProgress}}">DONE!</button>
+                <p class="chain-item progress-col inProgress-{{inProgress}}">{{progressRando}}</p>
             </td>
-            <td class="txt-center">
-                
-                <input type="checkbox" class="tabl-check complete-check">
-                <p class="complete-col hidden"></p>
+            <td class="txt-center completeData">
+                <button class="btn btn-success table-check complete-check inProgress-{{complete}}">DONE!</button>
+                <p class="chain-item complete-col inProgress-{{complete}}">{{completeRando}}</p>
             </td>
-            <td class="txt-center">
-                
-                <input type="checkbox" class="tabl-check shipped-check">
-                <p class="shipped-col hidden"></p>
-
+            <td class="txt-center shippedData">  
+                <button class="btn btn-success table-check shipped-check  inProgress-{{shipped}}">DONE!</button>
+                <p class="chain-item shipped-col inProgress-{{shipped}}">{{shippedRando}}</p>
             </td>
         </tr>
         {{/each}}
     </script>
+
+    <script id="complete-table-script" type="tex/x-handlebars-template">
+        {{#each customersToRender}}
+        <tr class="txt-center table-row">
+            <td class="txt-center orderData" data-order="{{order}}">
+                <p class="order-col">{{order}}</p>
+            </td>
+            <td class="txt-center nameData">
+                <p class="name-col">{{name}}</p>
+            </td>
+            <td class="txt-center shippedData">  
+                <p class="chain-item shipped-col">{{dateShipped}}</p>
+            </td>
+        </tr>
+        {{/each}}
+    </script>
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
