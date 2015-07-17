@@ -72,17 +72,59 @@
                 </div>  <!-- container-fluid END --> 
             </nav> <!-- navbar END -->
 
-       </div> <!-- navbar container END -->
+        </div> <!-- navbar container END -->
     
+        <div class="spacer"></div>
 
-    
+        <div class="content-container">
+
+            <div class="row txt-center">
+                
+                <div id="shop-container" class="">
+                    
+                    <ul class="list-element">
+                        <!-- CONTENT ADDED HERE FROM TEMPLATE -->
+                    </ul>
+
+                </div>
+
+            </div> <!-- row End --> 
+        </div> <!-- content container END --> 
+
+
+
+
+
+        <div class="footer clearfix">
+            
+            <h5 class="footer-title align-left"> Name McNamerson</h5>
+            <p class="copyright abs-vert-center">Copyright (c) 2015</p>
+
+        </div> <!-- footer END-->
     </div> <!-- big wrapper END --> 
+
+
+    <script id="shop-script" type="tex/x-handlebars-template">
+        {{#each allItems}}
+        <li class="product-container clearfix awesome-border-fill">
+            <img class="product-img" src="https://www.placehold.it/300" alt="placeholder">
+            <div class="information-container">
+                <h1 class="shop-item-title inline-block">{{name}}</h1>
+                <p class="shop-item-description ">{{desc}}</p>
+                <div class="price-and-button">
+                    <p class="shop-item-price inline-block">{{price}}</p>
+                    <button class="btn btn-success shop-item-checkout inline-block">Add To Cart!</button>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.3/handlebars.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="main.js"></script>
+    <script src="scripts/shop.js"></script>
 
   </body>
 </html>

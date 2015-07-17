@@ -42,15 +42,20 @@
         border-radius: 5px;
     }
 
-    .horiz-center {
-        left: 50%;
-        transform: translateX(-50%); 
-    }
 
     .relative {
         position: relative;
     }
 
+    .horiz-center {
+        left: 50%;
+        transform: translateX(-50%); 
+    }
+
+    .vert-center {
+        top: 50%;
+        transform: translateY(-50%);
+    }
     .abs-horiz-center {
         position: absolute;
         left: 50%;
@@ -308,7 +313,7 @@
     .footer {
         color: #3A1D0D;
         background-color: #CCDDE4;
-        position: relative; 
+        position: relative;
         font-size: .9em;
     }
     
@@ -381,6 +386,15 @@
         border-bottom: none;
     }
 
+    #recent-table{
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    #queue-table {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
     .table>thead>tr>th {
         border-bottom: none;
     }
@@ -395,6 +409,7 @@
     .table-container {
         left: 50%;
         transform: translateX(-50%);
+        text-align: center;
     }
 
     .table {
@@ -415,7 +430,7 @@
     }
 
     .shipped-table {
-        margin-bottom: 20px;
+        margin-bottom: 50px;
     }
 
     .table-title {
@@ -434,6 +449,7 @@
         width: 50%;
         margin: 0 auto;
         text-align: left;
+        max-width: 650px;
     }
     
     .input-field {
@@ -443,6 +459,7 @@
         padding: 10px;
         position: relative;
         transition: background-color 0.5s ease;
+        max-width: 750px;
     }
 
     .input-field:focus {
@@ -482,6 +499,58 @@
         text-align: center;
 
     }
+
+
+/*===========================================================================*/
+                        /* ~~~ SHOP ~~~ */ 
+/*===========================================================================*/
+   
+    /*==============================  container  =============================*/
+    .product-container {
+        display: inline-block;
+        padding: 15px;
+        position: relative;
+        width: 100%;
+        line-height: 100%;
+        vertical-align: middle;
+        min-width: 700px;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .product-img{
+        float: left;
+    }
+
+    .information-container {
+        margin-top: 40px;
+        padding-left: 330px;
+        text-align: left;
+    }
+
+    .shop-item-checkout {
+        height: 80px;
+        width: 200px;
+    }
+    .shop-item-price {
+        margin-right: 50px;
+        font-size: 1.8em;
+    }
+    .price-and-button {
+        bottom: 15px;
+        display: inline-block;
+        right: 15px;
+        position:absolute;
+    }
+    
+    .list-element {
+        padding: 0;
+    }
+
+
+
+
 /*===========================================================================*/
                         /* ~~~ MEDIA QUERIES ~~~ */ 
 /*===========================================================================*/
