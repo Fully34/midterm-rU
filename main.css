@@ -15,7 +15,9 @@
     .big-wrapper {
         max-width: 1200px;
         margin: 0 auto;
-        box-shadow: 0px 0px 2px 3px rgba(239, 136, 73, 0.5)
+        border-right: 2px solid #CCDDE4;
+        border-left: 2px solid #CCDDE4;
+        box-shadow: 0px 0px 2px 3px rgba(239, 136, 73, 0.5);
     }
 
     .background-img {
@@ -84,6 +86,8 @@
 
     .page-break {
         border: 1px solid #CCDDE4;
+        box-shadow: 0px 0px 2px 3px rgba(239, 136, 73, 0.5);
+        width: 100%;
     }
 
     .spacer {
@@ -216,6 +220,7 @@
     
     .nav-item-rght {
         right: 0;
+        padding-right: 10px;
     }
 
     .nav-item-lft {
